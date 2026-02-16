@@ -7,121 +7,108 @@ An AI-powered tool to analyze and optimize your resume for Applicant Tracking Sy
 ## ✨ Features
 
 ### Resume Analysis
-- **AI-Powered Analysis**: Get intelligent insights beyond basic keyword matching
-- **Multiple Analysis Options**: Choose from Quick Scan, Detailed Analysis, ATS Optimization, or Formatting Check
-- **Keyword Matching**: See which keywords from job descriptions match your resume
-- **Visual Feedback**: Resume heatmaps and word clouds visualize your resume's strengths
-- **Industry-Specific Advice**: Get tailored recommendations for your field
-- **Version Tracking**: Save multiple versions to measure improvements over time
+- **AI-Powered Analysis**: Get intelligent insights using **OpenRouter (GPT-OSS-120B)** for deep analysis.
+- **Multiple Analysis Options**: Choose from Quick Scan, Detailed Analysis, ATS Optimization, or Formatting Check.
+- **Keyword Matching**: See which keywords from job descriptions match your resume.
+- **Visual Feedback**: Resume heatmaps and word clouds visualize your resume's strengths.
+- **Industry-Specific Advice**: Get tailored recommendations for your field.
+- **Version Tracking**: Save multiple versions to measure improvements over time.
 
 ### GitHub Profile Analysis
-- **Repository Assessment**: Analyze your GitHub profile to complement your resume
-- **Skills Gap Identification**: See if your GitHub projects showcase skills missing from your resume
-- **Technical Validation**: Demonstrate coding abilities with actual GitHub projects
-- **Language Visualization**: See your programming language distribution and activity patterns
-- **AI-Powered Insights**: Get recommendations on how to improve your GitHub profile
+- **Repository Assessment**: Analyze your GitHub profile to complement your resume.
+- **Skills Gap Identification**: See if your GitHub projects showcase skills missing from your resume.
+- **Technical Validation**: Demonstrate coding abilities with actual GitHub projects.
+- **Language Visualization**: See your programming language distribution and activity patterns.
+- **AI-Powered Insights**: Get recommendations on how to improve your GitHub profile using AI.
 
 ### Industry Insights
-- **Industry-Specific Skills**: View top skills required for various industries
-- **Resume Optimization Tips**: Get tailored advice for your specific industry
-- **ATS Best Practices**: Learn how to format your resume for optimal ATS performance
+- **Industry-Specific Skills**: View top skills required for various industries.
+- **Resume Optimization Tips**: Get tailored advice for your specific industry.
+- **ATS Best Practices**: Learn how to format your resume for optimal ATS performance.
 
 ## 🛠️ Installation
 
 1. Clone the repository:
-   ```
+   ```bash
    git clone https://github.com/yourusername/advanced-ats-resume-checker.git
    cd advanced-ats-resume-checker
    ```
 
-2. Create and activate a virtual environment (optional but recommended):
-   ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+2. Create and activate a virtual environment (recommended):
+   ```bash
+    # Windows
+    python -m venv venv
+    venv\Scripts\activate
+    
+    # Mac/Linux
+    python3 -m venv venv
+    source venv/bin/activate
    ```
 
 3. Install the required dependencies:
-   ```
+   ```bash
    pip install -r requirements.txt
    ```
 
-4. Create a `.env` file in the root directory and add your Google API key:
-   ```
-   GOOGLE_API_KEY=your_google_api_key_here
+4. Create a `.env` file in the root directory and add your API keys:
+   ```env
+   # OpenRouter API Key for AI Analysis
+   API_KEY=your_openrouter_api_key_here
+   
+   # GitHub Token (Optional, avoids rate limits for GitHub Analysis)
+   GITHUB_TOKEN=your_github_personal_access_token
    ```
 
 ## 🚀 Usage
 
 1. Start the Streamlit application:
-   ```
-   streamlit run app.py
+   ```bash
+   streamlit run resumeATS.py
    ```
 
-2. Open your web browser and navigate to the URL shown in the terminal (usually http://localhost:8501)
+2. Open your web browser and navigate to the URL shown in the terminal (usually http://localhost:8501).
 
-3. Use the three main tabs to:
-   - Analyze your resume against job descriptions
-   - Evaluate your GitHub profile to complement your resume
-   - Get industry-specific insights and best practices
+3. Use the tabs to:
+   - **Resume Analysis**: Upload PDF and paste Job Description.
+   - **GitHub Analyzer**: Analyze a GitHub profile.
+   - **Industry Insights**: Get specific advice.
 
 ## 📋 How to Use
 
 ### Resume Analysis
-1. Upload your resume in PDF format
-2. Paste the job description you're applying for
+1. Upload your resume in PDF format.
+2. Paste the job description you're applying for.
 3. Choose your preferred analysis type:
-   - **Quick Scan**: Fast overview of your resume's strengths and weaknesses
-   - **Detailed Analysis**: Comprehensive breakdown of your resume's components
-   - **ATS Optimization**: Focused feedback on improving ATS compatibility
-   - **Formatting Check**: Analysis of your resume's structure and layout
-4. Review the results and make improvements to your resume
+   - **Quick Scan**: Fast overview.
+   - **Detailed Analysis**: Comprehensive breakdown.
+   - **ATS Optimization**: Keywords and formatting advice.
+   - **Formatting Check**: Layout and structure analysis.
+4. Review the results and score.
 
 ### GitHub Profile Analyzer
-1. Enter your GitHub username
-2. Optionally, use an existing resume from the Resume Analysis tab
-3. Review insights about your repositories, languages, and activity
-4. Use the AI analysis to understand how your GitHub profile complements your resume
+1. Enter your GitHub username.
+2. Optionally, use an existing resume from the Resume Analysis tab.
+3. Review insights about your repositories, languages, and activity.
+4. Use the AI analysis to understand how your GitHub profile complements your resume.
 
 ### Industry Insights
-1. Select your industry from the dropdown menu
-2. Review the top skills for your chosen industry
-3. Read industry-specific resume tips and ATS optimization advice
-
-## 📊 Features in Detail
-
-### Resume Analysis
-- **Keyword Matching**: Identifies which keywords from the job description appear in your resume
-- **Resume Heatmap**: Visualizes which sections of your resume match job description keywords
-- **Word Cloud**: Shows the most prominent keywords in your resume
-- **Formatting Check**: Detects issues that might cause problems with ATS systems
-- **Industry Detection**: Automatically identifies your target industry and provides relevant advice
-
-### GitHub Analysis
-- **Repository Overview**: Displays your top repositories with stars, forks, and languages
-- **Language Distribution**: Visualizes the programming languages you use most frequently
-- **Activity Chart**: Shows your GitHub activity patterns
-- **AI Recommendations**: Provides personalized advice on improving your GitHub profile
+1. Select your industry.
+2. Review the top skills and tips.
 
 ## 🔧 Requirements
 
 - Python 3.7+
 - Streamlit
-- Google Generative AI API key
+- OpenAI (client for OpenRouter)
 - NLTK
 - Pandas
-- Plotly
-- Matplotlib
-- PyMuPDF (for PDF reading)
+- Plotly / Matplotlib
+- PyMuPDF / PyPDF2
+- Sentence Transformers (BERT)
 
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## 📝 License
 
@@ -129,7 +116,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 🙏 Acknowledgements
 
-- [Google Generative AI](https://ai.google/discover/generativeai/) for providing the AI capabilities
-- [Streamlit](https://streamlit.io/) for the web application framework
-- [NLTK](https://www.nltk.org/) for natural language processing capabilities
-- All the open-source libraries that made this project possible
+- **OpenRouter & OpenAI**: For providing the AI capabilities.
+- **Streamlit**: For the web application framework.
+- **NLTK & HuggingFace**: For NLP and BERT embeddings.
