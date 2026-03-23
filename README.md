@@ -30,7 +30,7 @@ An AI-powered tool to analyze and optimize your resume for Applicant Tracking Sy
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/advanced-ats-resume-checker.git
+   git clone https://github.com/Vivek-pen/advanced-ats-resume-checker.git
    cd advanced-ats-resume-checker
    ```
 
